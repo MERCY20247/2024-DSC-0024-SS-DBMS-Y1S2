@@ -63,6 +63,10 @@ CREATE TABLE `tblstudent` (
 --
 -- Dumping data for table `tblstudent`
 --
+-- Question1(vi)
+SELECT MAX(TuitionFee) AS Highest Amount
+AND MIN(TuitionFee) AS lowest price
+FROM tblFinance;
 
 LOCK TABLES `tblstudent` WRITE;
 /*!40000 ALTER TABLE `tblstudent` DISABLE KEYS */;

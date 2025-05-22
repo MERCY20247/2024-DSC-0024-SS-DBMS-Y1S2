@@ -26,10 +26,10 @@ DROP TABLE IF EXISTS `tblfinance`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tblfinance` (
   `StudentID` int DEFAULT NULL,
-  `Tuition_Fee` int DEFAULT NULL,
-  `Administration_Fee` int DEFAULT NULL,
-  `Exams_Fee` int DEFAULT NULL,
-  `Medical_Fee` int DEFAULT NULL,
+  `TuitionFee` int DEFAULT NULL,
+  `AdministrationFee` int DEFAULT NULL,
+  `ExamsFee` int DEFAULT NULL,
+  `MedicalFee` int DEFAULT NULL,
   KEY `StudentID` (`StudentID`),
   CONSTRAINT `tblfinance_ibfk_1` FOREIGN KEY (`StudentID`) REFERENCES `tblstudent` (`StudentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -72,7 +72,11 @@ INSERT INTO `tblstudent` VALUES ('Cyrus',1,'1989-06-15','Y2S1','0704231345'),('N
 /*!40000 ALTER TABLE `tblstudent` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
+-- Question1(ii)
+SELECT StudentName, tblFinance.TuitionFee
+FROM tblstudent
+INNER JOIN tblFinance ON tblstudent.StudentID = tblFinance.StudentID
+WHERE tblstudent.Year = 'Y1S1';
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

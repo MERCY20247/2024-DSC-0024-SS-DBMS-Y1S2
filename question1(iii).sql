@@ -59,6 +59,11 @@ CREATE TABLE `tblstudent` (
   PRIMARY KEY (`StudentID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+-- Question1(iii)
+SELECT tblstudent.StudentName, tblstudent.StudentID, tblstudent.Year = tblFinance.TuitionFee
+FROM tblstudent
+INNER JOIN tblFinance ON tblstudent.StudentID = tblFinance.StudentID
+WHERE tblFinance.TuitionFee >= 30000;
 
 --
 -- Dumping data for table `tblstudent`

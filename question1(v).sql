@@ -63,6 +63,10 @@ CREATE TABLE `tblstudent` (
 --
 -- Dumping data for table `tblstudent`
 --
+-- Question1(v)
+UPDATE tblstudent
+SET StudentName = "NELSON"
+WHERE StudentID = 26;
 
 LOCK TABLES `tblstudent` WRITE;
 /*!40000 ALTER TABLE `tblstudent` DISABLE KEYS */;
